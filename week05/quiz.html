@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">ShopeeMall</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="alert alert-warning" role="alert">
+        ไอเทมฮอต!!! ส่งไว!!! ราคาถูกที่สุด!!! รองเท้า​ผ้าใบ​ ทรง OLD SKOOL ไซส์​
+        : 37 - 45!
+      </div>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">หน้าหลัก</a></li>
+          <li class="breadcrumb-item"><a href="#">รองเท้าชาย</a></li>
+          <li class="breadcrumb-item"><a href="#">รองเท้าผ้าใบ</a></li>
+        </ol>
+      </nav>
+      <div class="row">
+        <div class="col-lg-6">
+          <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="col-lg-6">
+                <div class="carousel-item active">
+                  <img
+                    src="https://down-th.img.susercontent.com/file/d4790de0a4b526ad8e25080365782a03@resize_w900_nl.webp"
+                    class="d-block w-100"
+                    alt="https://down-th.img.susercontent.com/file/th-11134258-7r98z-lza9f5c8o71l63"
+                  />
+                </div>
+                <div class="carousel-item active">
+                  <img
+                    src="https://down-th.img.susercontent.com/file/bf2a8406ba2ce22d6df4c11d585fb664@resize_w900_nl.webp"
+                    class="d-block w-100"
+                    alt="https://down-th.img.susercontent.com/file/bf2a8406ba2ce22d6df4c11d585fb664@resize_w900_nl.webp"
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h3>
+            ไอเทมฮอต!!! ส่งไว!!! ราคาถูกที่สุด!!! รองเท้า​ผ้าใบ​ ทรง OLD SKOOL
+            ไซส์​ : 37 - 45 <span class="badge text-bg-secondary">New</span>
+          </h3>
+
+          <div class="text-warning fs-4">
+            ★★★★☆<span class="text-dark fs-6">4.5</span>
+          </div>
+          <h2>฿135.00</h2>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ร้านขายของ</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-light border-bottom">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">Navbar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                >Dropdown</a
+              >
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link disabled">Disabled</a></li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>ประกาศ</strong> ร้านจัดโปรโมชั่น
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">หน้าหลัก</a></li>
+          <li class="breadcrumb-item"><a href="#">หมวดหมู่ของสินค้า</a></li>
+          <li class="breadcrumb-item active" aria-current="page">ลูกชิวาว่า</li>
+        </ol>
+      </nav>
+
+      <div class="row">
+        <div class="col-md-8">
+          <div
+            id="productCarousel"
+            class="carousel slide mb-4"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#productCarousel"
+                data-bs-slide-to="0"
+                class="active"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#productCarousel"
+                data-bs-slide-to="1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#productCarousel"
+                data-bs-slide-to="2"
+              ></button>
+            </div>
+            <div class="carousel-inner border">
+              <div class="carousel-item active">
+                <img
+                  src="https://down-th.img.susercontent.com/file/d4790de0a4b526ad8e25080365782a03@resize_w900_nl.webp"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://down-th.img.susercontent.com/file/th-11134258-7r98z-lza9f5c8o71l63"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://down-th.img.susercontent.com/file/bf2a8406ba2ce22d6df4c11d585fb664@resize_w900_nl.webp"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#productCarousel"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon bg-dark rounded-circle p-3"
+                aria-hidden="true"
+              ></span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#productCarousel"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon bg-dark rounded-circle p-3"
+                aria-hidden="true"
+              ></span>
+            </button>
+          </div>
+
+          <h5 class="mb-3">รองเท้า​ผ้าใบ​ ทรง OLD SKOOL</h5>
+          <div class="accordion" id="productAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                >
+                  รายละเอียด
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse show"
+                data-bs-parent="#productAccordion"
+              >
+                <div class="accordion-body">
+                  อยากรู้ว่ารุ่น PRO แล้วพิเศษยังไง? แตกต่างจาก Classic อย่างไร?
+                  ...อ่านรีวิวรายละเอียดด้านล่างได้เลยครับ หมดปัญหาเวลาใส่ Old
+                  Skool แล้วคนจะสงสัยว่าเป็นของปลอมหรือป่าว เพราะรุ่น PRO
+                  ยังไงก็แตกต่างด้วยวัสดุที่ดีกว่า พื้นนุ่มกว่า ที่สำคัญคือป้าย
+                  Logo สีแดงและการเดินตะเข็บแบบโค้งที่คลาสสิคกว่า <3 [VANS] "Old
+                  Skool【PRO】- Black/White" การันตีของแท้ 100% by WeSneaker :
+                  VANS Authorized Online Dealer 【ราคา : 3,690.-】 【Available
+                  in Size】: 4us(35) 22cm | 5us(36-37) 23cm | 6us(38) 24cm |
+                  7us(39) 25cm | 8us(40-41) 26cm | 9us(42) 27cm | 10us(43) 28cm
+                  (ของมีเข้ามาเพิ่มน้อยมากๆนะครับ)
+                  อยากรู้ว่า【PRO】แล้วพิเศษยังไง อ่านรีวิวด้านล่างได้เลยครับ
+                  Most Simply With No.1 And Great Skateboarder Shoe In The World
+                  Since 1977 by Paul Van Doren @California, USA ...VANS "Old
+                  Skool PRO - Black/White" : Price 3,590.- by WeSneaker Vans The
+                  Old Skool Pro, a Vans classic upgraded for enhanced
+                  performance, features suede, canvas, and leather uppers,
+                  single-wrap foxing tape, UltraCush HD sockliners to keep the
+                  foot close to the board while providing the highest level of
+                  impact cushioning, and Vans original waffle outsoles for
+                  superior grip and control. The Old Skool Pro also includes
+                  Duracap reinforcement rubber underlays in high wear areas for
+                  unrivaled durability. 【โอลด์ สคูล โปร】รองเท้า VANS
+                  โมเดลพระเอกสุดคลาสสิคตลอดระยะ40ปีตั้งแต่ปี 1977
+                  ที่ได้รับการนำกลับมาพัฒนาอัพเกรดใหม่ด้วยเทคโนโลยีการผลิตที่ดีที่สุดของ
+                  VANS OFF THE WALL โดยไม่ว่าจะเป็นหนังกลับ Suede
+                  ที่ขุยเรียบเนียนสนิท ผ้าใบ Canvas ขัดมันเนื้อลื่นไม่มีที่ติ
+                  ต่อด้วยขอบยาง Foxing tape ที่ดำสนิทโอบกอดล้อมรอบกายของแผ่นยาง
+                  Durable ที่มีชื่อใน Trademark ของ VANS ว่า Duracap
+                  ที่เหนียวทนทานรับแรงกระแทกและแรงกดทับได้เป็นอย่างดี
+                  ขยับลงไปต่อด้านในที่ทำให้เจ้า Old Skool PRO ตัวนี้แตกต่างจาก
+                  Old Skool ธรรมดาตรงที่พื้นเหยียบด้านในหรือ Insole Padded
+                  ที่ได้รับการติดตั้ง Absorber "UltraCush" HD Sockliners
+                  ลิขสิทธิ์เฉพาะ VANS ที่มอบความนุ่มนวลในการสวมใส่อย่างแตกต่าง
+                  อีกทั้งยังเพิ่มมิติในการเหยียบย่ำที่ตอบสนองต่อการเตะสเก็ตได้เป็นอย่างดีอีกด้วย
+                  - ตาไก่ร้อยเชือกรูบนสุดแบบ PRO - เชือก2สี - พื้นในนุ่มกว่าเป็น
+                  Ultracush - ขอบยางเหนียวกว่าเป็น Duracap - ป้าย Heel
+                  สีแดงที่ส้นแบบ PRO - ป้าย Logo ใต้ริ้วหนอน Side Stripe
+                  เป็นสีแดง - ด้านหลังป้ายสีแดงนี้ตีตรา PRO - ป้ายไซส์ใต้ลิ้นแบบ
+                  PRO - ตะเข็บข้างเป็นแบบโค้ง Classic - พื้น Outsole Waffle
+                  ตีตรา PRO - กล่องเป็นทรงผืนผ้าไม่บีบตัวรองเท้า Old Skool PRO -
+                  Black/White ตัวนี้จัดอยู่ใน Set ที่ถือว่าขายดีมากๆทั้งใน USA &
+                  EU
+                  เนื่องด้วยเป็นรุ่นที่มีเอกลักษณ์ที่โดดเด่นด้วยโทนสีดำ-ขาวบวกกับทรงโมเดลของ
+                  Old Skool ที่หล่อ ดูดี ในตัวของมันเอง สำหรับใครที่มองหาความ
+                  Premium และความแตกต่างในรุ่น Old Skool
+                  ทางร้านมีความใคร่เสนอให้ท่านสนองอย่างแรงกล้าด้วยความจริงใจครับ
+                  ...ห้ามพลาดด้วยประการทั้งปวง!!
+                  หมดแล้วไม่มีกำหนดเข้าเป็นปีๆครับ
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                >
+                  คุณสมบัติสินค้า
+                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                class="accordion-collapse collapse"
+                data-bs-parent="#productAccordion"
+              >
+                <div class="accordion-body">ข้อมูลคุณสมบัติ...</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                >
+                  ตารางค่าจัดส่ง
+                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                class="accordion-collapse collapse"
+                data-bs-parent="#productAccordion"
+              >
+                <div class="accordion-body">ฟรีค่าจัดส่งสำหรับสมาชิก</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h2 class="fw-bold">
+            ไอเทมฮอต!!! ส่งไว!!! ราคาถูกที่สุด!!! รองเท้า​ผ้าใบ​ ทรง OLD SKOOL
+            ไซส์​ : 37 - 45
+            <span class="badge rounded-pill text-bg-light border text-dark fs-6"
+              >ใหม่</span
+            >
+          </h2>
+
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="text-warning">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-half"></i>
+              <span class="text-dark ms-1">4.3</span>
+            </div>
+            <div>
+              <i class="bi bi-share me-2"></i>
+              <i class="bi bi-heart"></i>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-between mb-3 border-bottom pb-2">
+            <a href="#" class="text-decoration-none">หมวดหมู่ของสินค้า</a>
+            <span class="text-muted"
+              ><i class="bi bi-truck"></i> ฟรีค่าส่ง</span
+            >
+          </div>
+
+          <h1 class="fw-bold mb-3">
+            ฿135
+            <small class="fs-6 fw-normal text-muted float-end"
+              ><a href="#">DOGAN</a></small
+            >
+          </h1>
+
+          <div class="mb-3">
+            <label class="form-label">จำนวน</label>
+            <div class="input-group" style="width: 150px">
+              <button class="btn btn-outline-secondary" type="button">-</button>
+              <input type="text" class="form-control text-center" value="1" />
+              <button class="btn btn-outline-secondary" type="button">+</button>
+            </div>
+          </div>
+
+          <button class="btn btn-outline-dark w-100 mb-5 p-2">
+            <i class="bi bi-cart"></i> ใส่ตะกร้าสินค้า
+          </button>
+
+          <h6 class="text-muted">โฆษณา</h6>
+          <div class="card">
+            <img
+              src="https://placehold.co/300x200/EEE/31343C?text=Ad"
+              class="card-img-top p-3"
+              alt="..."
+            />
+            <div class="card-body border-top">
+              <h5 class="card-title">ชื่อสินค้า</h5>
+              <p class="card-text fw-bold">฿100</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
