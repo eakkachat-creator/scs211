@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รับสมัครนักศึกษา - หลักสูตรวิทยาการข้อมูล</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* ตั้งค่าตัวแปรสี (Theme Color: Purple) */
+        :root {
+            --primary-purple: #6200ea; /* สีม่วงหลัก (ปุ่ม, ไฮไลท์) */
+            --dark-purple: #3700b3;    /* สีม่วงเข้ม (เมื่อเอาเมาส์ชี้) */
+            --text-dark: #333;         /* สีตัวหนังสือ */
+            --text-light: #666;        /* สีตัวหนังสือรอง */
+            --bg-color: #ffffff;       /* สีพื้นหลัง */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+        }
+
+        /* --- Container --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Header / Navbar --- */
+        header {
+            padding: 15px 0;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px; /* จำลองโลโก้ */
+        }
+        
+        .logo span {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: var(--text-light);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-menu li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-menu li a:hover {
+            color: var(--primary-purple);
+        }
+
+        /* ปุ่มสมัครเรียน (Common Style) */
+        .btn-apply {
+            background-color: var(--primary-purple);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-apply:hover {
+            background-color: var(--dark-purple);
+        }
+
+        /* --- Hero Section (ส่วนเนื้อหาหลัก) --- */
+        .hero {
+            padding: 60px 0;
+            display: flex;
+            align-items: center;
+            min-height: 80vh; /* ให้ความสูงเต็มจอสวยๆ */
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        .hero-content p {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 30px;
+            max-width: 90%;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            /* เพิ่มเงาเล็กน้อยเพื่อให้รูปลอยขึ้น */
+            filter: drop-shadow(0 10px 15px rgba(98, 0, 234, 0.15));
+        }
+
+        /* --- Footer Bar --- */
+        .bottom-bar {
+            background-color: var(--primary-purple); /* ธีมสีม่วงตามขอ */
+            height: 15px;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+
+        /* --- Responsive Design (มือถือ) --- */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none; /* ซ่อนเมนูบนมือถือเพื่อความง่าย */
+            }
+            
+            .hero-grid {
+                grid-template-columns: 1fr; /* เรียงเป็นแนวตั้ง */
+                text-align: center;
+            }
+
+            .hero-content p {
+                margin: 0 auto 30px auto;
+            }
+            
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-grid {
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <i class="fas fa-brain" style="color: var(--primary-purple); font-size: 2rem;"></i>
+                <div>
+                    หลักสูตรวิทยาการคอมพิวเตอร์
+                    <span>มหาวิทยาลัยราชภัฏวไลยอลงกรณ์ฯ</span>
+                </div>
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="#">เกี่ยวกับเรา</a></li>
+                <li><a href="#">โครงสร้าง</a></li>
+                <li><a href="#">แผนการเรียน</a></li>
+                <li><a href="#">อาจารย์</a></li>
+                <li><a href="#">ค่าธรรมเนียม</a></li>
+                <li><a href="#">ติดต่อ</a></li>
+            </ul>
+
+            <a href="#" class="btn-apply">
+                <i class="fas fa-comment-dots"></i> สมัครเรียน
+            </a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                
+                <div class="hero-content">
+                    <h1>รับสมัครนักศึกษา (ปริญญาตรี ภาคจันทร์-ศุกร์ และ ภาคเสาร์-อาทิตย์)</h1>
+                    <p>
+                        หลักสูตรวิทยาการคอมพิวเตอร์ คณะวิทยาศาสตร์และเทคโนโลยี 
+                        มหาวิทยาลัยราชภัฏวไลยอลงกรณ์ ในพระบรมราชูปถัมภ์ 
+                        เปิดรับสมัครนักศึกษาใหม่ (ปริญญาตรีภาคจันทร์-ศุกร์ และภาคเสาร์-อาทิตย์) 
+                        ตั้งแต่วันนี้เป็นต้นไป ดูรายละเอียดและกรอกใบสมัครได้ที่นี่
+                    </p>
+                    <a href="#" class="btn-apply" style="padding: 15px 40px; font-size: 1.1rem;">
+                        <i class="fas fa-comment-dots"></i> สมัครเรียน
+                    </a>
+                </div>
+
+                <div class="hero-image">
+                    <img src="https://via.placeholder.com/400x400/eeeeee/6200ea?text=VRU+Data+Science" alt="VRU Data Science Logo">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="bottom-bar"></div>
+
+</body>
+</html>
