@@ -1,261 +1,460 @@
-<!doctype html>
-<html lang="th">
+  <!doctype html>
+  <html lang="th">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>รับสมัครนักศึกษา - หลักสูตรวิทยาการข้อมูล</title>
+    <title>รับสมัครนักศึกษา | วิทยาการคอมพิวเตอร์ VRU</title>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-    <style>
-      /* ตั้งค่าตัวแปรสี (Theme Color: Purple) */
-      :root {
-        --primary-purple: #6200ea; /* สีม่วงหลัก (ปุ่ม, ไฮไลท์) */
-        --dark-purple: #3700b3; /* สีม่วงเข้ม (เมื่อเอาเมาส์ชี้) */
-        --text-dark: #333; /* สีตัวหนังสือ */
-        --text-light: #666; /* สีตัวหนังสือรอง */
-        --bg-color: #ffffff; /* สีพื้นหลัง */
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #6200ea;
+      --dark: #3700b3;
+      --text-dark: #333;
+      --text-light: #666;
+    }
+
+    body {
+      font-family: "Prompt", sans-serif;
+      color: var(--text-dark);
+    }
+
+    header {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+    }
+
+    .logo {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 700;
+    }
+
+    .logo img {
+      height: 42px;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-menu li {
+      position: relative;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+
+    .nav-menu a:hover {
+      color: var(--primary);
+    }
+
+    .dropdown-menu {
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.15);
+      z-index: 2000;
+    }
+
+    .dropdown-item:hover {
+      background: #f3f0ff;
+      color: var(--primary);
+    }
+
+    .btn-apply {
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 25px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .btn-apply:hover {
+      background: var(--dark);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(98,0,234,.3);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 80px 0;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: var(--text-light);
+      margin-bottom: 30px;
+    }
+
+    .hero img {
+      max-width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(98,0,234,.2);
+    }
+
+    /* Carousel Section */
+    .carousel-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #f5f5f5 0%, #fff 100%);
+    }
+
+    .carousel-section h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-weight: 700;
+      font-size: 2rem;
+      color: var(--text-dark);
+    }
+
+    .carousel-container {
+      position: relative;
+      padding: 0 80px;
+    }
+
+    .carousel-inner {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 50px rgba(98,0,234,.2);
+    }
+
+    .carousel-item {
+      height: 450px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carousel-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      color: white;
+      padding: 60px 40px 40px;
+      text-align: left;
+    }
+
+    .carousel-caption h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .carousel-caption p {
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 60px;
+      height: 60px;
+      background: #6200ea
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      border: none;
+      opacity: 1;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel-control-prev {
+      left: 20px;
+    }
+
+    .carousel-control-next {
+      right: 20px;
+    }
+
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+      background: rgba(55, 0, 179, 0.95);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      width: 20px;
+      height: 20px;
+      background-size: contain;
+      filter: brightness(0) invert(1);
+    }
+
+    .carousel-indicators {
+      bottom: -60px;
+    }
+
+    .carousel-indicators [data-bs-target] {
+      background-color: var(--primary);
+      border-radius: 50%;
+      width: 14px;
+      height: 14px;
+      border: none;
+      opacity: 0.7;
+      transition: all 0.3s ease;
+    }
+
+    .carousel-indicators .active {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 768px) {
+      .carousel-container {
+        padding: 0 50px;
       }
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: 45px;
+        height: 45px;
       }
 
-      body {
-        font-family: "Prompt", sans-serif;
-        color: var(--text-dark);
-        background-color: var(--bg-color);
-        line-height: 1.6;
+      .carousel-control-prev {
+        left: 10px;
       }
 
-      /* --- Container --- */
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
+      .carousel-control-next {
+        right: 10px;
       }
 
-      /* --- Header / Navbar --- */
-      header {
-        padding: 15px 0;
-        background: #fff;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        position: sticky;
-        top: 0;
-        z-index: 1000;
+      .carousel-item {
+        height: 350px;
+        padding: 40px 30px;
       }
 
-      .nav-wrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+      .carousel-item-title {
+        font-size: 1.8rem;
       }
 
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-weight: 700;
-        font-size: 1.2rem;
-        color: var(--text-dark);
-        text-decoration: none;
-      }
-
-      .logo img {
-        height: 40px;
-      }
-
-      .logo span {
-        display: block;
-        font-size: 0.8rem;
-        font-weight: 400;
-        color: var(--text-light);
-      }
-
-      .nav-menu {
-        display: flex;
-        list-style: none;
-        gap: 25px;
-      }
-
-      .nav-menu li a {
-        text-decoration: none;
-        color: var(--text-dark);
-        font-weight: 500;
-        font-size: 0.95rem;
-        transition: color 0.3s;
-      }
-
-      .nav-menu li a:hover {
-        color: var(--primary-purple);
-      }
-
-      /* ปุ่มสมัครเรียน (Common Style) */
-      .btn-apply {
-        background-color: var(--primary-purple);
-        color: white;
-        padding: 10px 25px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 600;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        transition: background-color 0.3s;
-        border: none;
-        cursor: pointer;
-      }
-
-      .btn-apply:hover {
-        background-color: var(--dark-purple);
-      }
-
-      /* --- Hero Section (ส่วนเนื้อหาหลัก) --- */
-      .hero {
-        padding: 60px 0;
-        display: flex;
-        align-items: center;
-        min-height: 80vh; /* ให้ความสูงเต็มจอสวยๆ */
-      }
-
-      .hero-grid {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 50px;
-        align-items: center;
-      }
-
-      .hero-content h1 {
-        font-size: 2.5rem;
-        line-height: 1.3;
-        margin-bottom: 20px;
-        color: #222;
-      }
-
-      .hero-content p {
-        color: var(--text-light);
+      .carousel-item-desc {
         font-size: 1rem;
-        margin-bottom: 30px;
-        max-width: 90%;
       }
+    }
 
-      .hero-image {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+    footer {
+      background: #f8f8f8;
+      padding: 40px 0;
+      margin-top: 80px;
+    }
 
-      .hero-image img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 20px;
-        /* เพิ่มเงาเล็กน้อยเพื่อให้รูปลอยขึ้น */
-        filter: drop-shadow(0 10px 15px rgba(98, 0, 234, 0.15));
-      }
-
-      /* --- Footer Bar --- */
-      .bottom-bar {
-        background-color: var(--primary-purple); /* ธีมสีม่วงตามขอ */
-        height: 15px;
-        width: 100%;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-      }
-
-      /* --- Responsive Design (มือถือ) --- */
-      @media (max-width: 768px) {
-        .nav-menu {
-          display: none; /* ซ่อนเมนูบนมือถือเพื่อความง่าย */
-        }
-
-        .hero-grid {
-          grid-template-columns: 1fr; /* เรียงเป็นแนวตั้ง */
-          text-align: center;
-        }
-
-        .hero-content p {
-          margin: 0 auto 30px auto;
-        }
-
-        .hero-content h1 {
-          font-size: 1.8rem;
-        }
-
-        .hero-grid {
-          gap: 30px;
-        }
-      }
-    </style>
+    footer h5 {
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+  </style>
   </head>
+
   <body>
-    <header>
-      <div class="container nav-wrapper">
-        <a href="#" class="logo">
-          <img src="https://cs.vru.ac.th/images/css.png" alt="VRU CS Logo" />
-          <div>
-            หลักสูตรวิทยาการคอมพิวเตอร์
-            <span>มหาวิทยาลัยราชภัฏวไลยอลงกรณ์ฯ</span>
-          </div>
-        </a>
 
-        <ul class="nav-menu">
-          <li><a href="#">เกี่ยวกับเรา</a></li>
-          <li><a href="#">โครงสร้าง</a></li>
-          <li><a href="#">แผนการเรียน</a></li>
-          <li><a href="#">อาจารย์</a></li>
-          <li><a href="#">ค่าธรรมเนียม</a></li>
-          <li><a href="#">ติดต่อ</a></li>
-        </ul>
+  <header>
+    <nav class="navbar bg-light  ">
+    <div class="container nav-wrapper ">
+      <a href="#" class="logo">
+        <img src="https://cs.vru.ac.th/images/css.png" alt="VRU Logo">
+        <div>
+          หลักสูตรวิทยาการคอมพิวเตอร์<br>
+          <small style="font-weight:400;color:#666">
+            มหาวิทยาลัยราชภัฏวไลยอลงกรณ์ฯ
+          </small>
+        </div>
+      </a>
 
-        <a href="#" class="btn-apply">
-          <i class="fas fa-comment-dots"></i> สมัครเรียน
-        </a>
+      <ul class="nav-menu">
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            เกี่ยวกับเรา
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">ประวัติหลักสูตร</a></li>
+            <li><a class="dropdown-item" href="#">วิสัยทัศน์และพันธกิจ</a></li>
+            <li><a class="dropdown-item" href="#">คณาจารย์</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            หลักสูตร
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">โครงสร้างหลักสูตร</a></li>
+            <li><a class="dropdown-item" href="#">แผนการเรียน 4 ปี</a></li>
+            <li><a class="dropdown-item" href="#">รายวิชาที่เปิดสอน</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#">ค่าเทอม</a></li>
+        <li><a href="#">ติดต่อ</a></li>
+      </ul>
+
+      <a href="#" class="btn-apply">
+        <i class="fa-solid fa-pen-to-square"></i> สมัครเรียน
+      </a>
       </div>
-    </header>
+    </nav>
+  </header>
+  <br>
 
-    <section class="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="hero-content">
-            <h1>
-              รับสมัครนักศึกษา (ปริญญาตรี ภาคจันทร์-ศุกร์ และ ภาคเสาร์-อาทิตย์)
-            </h1>
-            <p>
-              หลักสูตรวิทยาการคอมพิวเตอร์ คณะวิทยาศาสตร์และเทคโนโลยี
-              มหาวิทยาลัยราชภัฏวไลยอลงกรณ์ ในพระบรมราชูปถัมภ์
-              เปิดรับสมัครนักศึกษาใหม่ (ปริญญาตรีภาคจันทร์-ศุกร์
-              และภาคเสาร์-อาทิตย์) ตั้งแต่วันนี้เป็นต้นไป
-              ดูรายละเอียดและกรอกใบสมัครได้ที่นี่
-            </p>
-            <a
-              href="#"
-              class="btn-apply"
-              style="padding: 15px 40px; font-size: 1.1rem"
-            >
-              <i class="fas fa-comment-dots"></i> สมัครเรียน
-            </a>
+<!-- Carousel Section -->
+<section class="carousel-section">
+  <div class="container">    
+    <div class="carousel-container">
+      <div id="carouselAutoslide" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=450&fit=crop" alt="หลักสูตรคุณภาพ">
+            <div class="carousel-caption">
+              <h3><i class="fa-solid fa-graduation-cap"></i> หลักสูตรคุณภาพ</h3>
+              <p>หลักสูตรที่ออกแบบตามมาตรฐานสากล เพื่อพัฒนาทักษะด้านเทคโนโลยีอย่างครบครัน</p>
+            </div>
           </div>
 
-          <div class="hero-image">
-            <img
-              src="https://via.placeholder.com/400x400/eeeeee/6200ea?text=VRU+Data+Science"
-              alt="VRU Data Science Logo"
-            />
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=450&fit=crop" alt="อาจารย์ผู้เชี่ยวชาญ">
+            <div class="carousel-caption">
+              <h3><i class="fa-solid fa-chalkboard-user"></i> อาจารย์ผู้เชี่ยวชาญ</h3>
+              <p>บุคลากรผู้มีประสบการณ์และความรู้ลึกซึ้งในสาขาวิทยาการคอมพิวเตอร์</p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1200&h=450&fit=crop" alt="สถานีอุปกรณ์ทันสมัย">
+            <div class="carousel-caption">
+              <h3><i class="fa-solid fa-laptop"></i> สถานีอุปกรณ์ทันสมัย</h3>
+              <p>ห้องปฏิบัติการที่มีเครื่องมือและซอฟต์แวร์ใหม่ล่าสุดเพื่อการเรียนรู้ที่ดีที่สุด</p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=450&fit=crop" alt="การสนับสนุนอาชีพ">
+            <div class="carousel-caption">
+              <h3><i class="fa-solid fa-handshake"></i> การสนับสนุนอาชีพ</h3>
+              <p>มีการช่วยเหลือการหางาน และติดต่อสัมพันธ์กับบริษัทชั้นนำด้านไอที</p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=450&fit=crop" alt="โอกาสแลกเปลี่ยนนานาชาติ">
+            <div class="carousel-caption">
+              <h3><i class="fa-solid fa-globe"></i> โอกาสแลกเปลี่ยนนานาชาติ</h3>
+              <p>การศึกษาต่อและอบรมนอกประเทศ พร้อมสัมพันธ์กับมหาวิทยาลัยต่างประเทศ</p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <div class="bottom-bar"></div>
-  </body>
-</html>
+        <!-- Navigation Buttons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselAutoslide" data-bs-slide="prev" style="z-index: 10;">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselAutoslide" data-bs-slide="next" style="z-index: 10;">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+        <!-- Indicators -->
+        <div class="carousel-indicators" style="z-index: 5;">
+          <button type="button" data-bs-target="#carouselAutoslide" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselAutoslide" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselAutoslide" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselAutoslide" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselAutoslide" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h1>
+            รับสมัครนักศึกษา<br>
+            หลักสูตรวิทยาการคอมพิวเตอร์
+          </h1>
+          <p>
+            คณะวิทยาศาสตร์และเทคโนโลยี  
+            มหาวิทยาลัยราชภัฏวไลยอลงกรณ์ ในพระบรมราชูปถัมภ์  
+            เปิดรับนักศึกษาระดับปริญญาตรี  
+            <strong>ภาคปกติ (จันทร์–ศุกร์)</strong> และ  
+            <strong>ภาคพิเศษ (เสาร์–อาทิตย์)</strong>
+          </p>
+          <a href="#" class="btn-apply">
+            สมัครเรียนออนไลน์
+          </a>
+        </div>
+
+
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5>ติดต่อหลักสูตร</h5>
+          <p>
+            สาขาวิชาวิทยาการคอมพิวเตอร์<br>
+            คณะวิทยาศาสตร์และเทคโนโลยี<br>
+            มหาวิทยาลัยราชภัฏวไลยอลงกรณ์ฯ
+          </p>
+        </div>
+        <div class="col-md-6">
+          <h5>ช่องทางติดต่อ</h5>
+          <p>
+            โทร: 02-000-0000<br>
+            Email: cs@vru.ac.th<br>
+            Facebook: VRU Computer Science
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+      </html>
